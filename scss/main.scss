@@ -27,7 +27,7 @@ $bold: 700;
 
 // transitions
 .div-up {
-    transform: translate(-15%, -175%);
+    transform: translate(-15%, -100%);
 }
 .div-back {
     transform: translate();
@@ -86,6 +86,7 @@ body {
   font-family: 'Inconsolata', 'sans-serif';
   .container {
     // container code
+    margin: 0 auto;
     transition: transform 1s;
     header {
         display: -webkit-flex;
@@ -130,7 +131,7 @@ body {
   .social,
   .contact {
         display: none;
-        margin: -10% 0 0 5%;
+        margin: -5% 0 0 5%;
     }
   .experience {
     .experience-list-container {

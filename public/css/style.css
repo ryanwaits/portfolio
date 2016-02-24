@@ -5,7 +5,7 @@
   margin: 0 auto; }
 
 .div-up {
-  transform: translate(-15%, -175%); }
+  transform: translate(-15%, -100%); }
 
 .div-back {
   transform: translate(); }
@@ -60,6 +60,7 @@ body {
   background-color: rgba(254, 255, 247, 0.1);
   font-family: 'Inconsolata', 'sans-serif'; }
   body .container {
+    margin: 0 auto;
     transition: transform 1s; }
     body .container header {
       display: -webkit-flex;
@@ -95,7 +96,7 @@ body {
   body .social,
   body .contact {
     display: none;
-    margin: -10% 0 0 5%; }
+    margin: -5% 0 0 5%; }
   body .experience .experience-list-container .job-one,
   body .experience .experience-list-container .job-two,
   body .experience .experience-list-container .job-three,
