@@ -1,0 +1,274 @@
+// fonts
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+// variables
+$main-bg: rgba(254,255,247, 0.1);
+$header-color: rgba(34, 34, 34, 0.9);
+$header-color-active: rgb(34, 34, 34);
+$highlight-bg: rgb(34, 34, 34);
+$highlight-color: rgb(0, 216, 255);
+$divider-color: rgba(34, 34, 34, 0.2);
+$keyword: rgb(186, 71, 93);
+$function: rgb(121, 93, 163);
+$vars: rgb(0, 134, 179);
+$fb-bg: rgb(68, 97, 157);
+$fb-color: rgb(255, 255, 255);
+$twitter: rgb(0, 172, 238);
+$github: rgb(221, 17, 68);
+$github-light: rgba(221, 17, 68, 0.8);
+
+$bold: 700;
+
+.alert {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// transitions
+.div-up {
+    transform: translate(-15%, -175%);
+}
+.div-back {
+    transform: translate();
+}
+.divider {
+    width: 60%;
+    margin: 0 auto;
+    border-bottom: 1px solid $divider-color;
+}
+.annotate {
+    background: #f8f8ff;
+    border: 1px solid #dedede;
+    font-size: 12px;
+    padding: 0 0.2em;
+}
+a {
+    text-decoration: none;
+}
+span.keyword {
+    color: $keyword;
+}
+span.function {
+    color: $function;
+}
+span.vars {
+    color: $vars;
+}
+span.fb {
+    background-color: $fb-bg;
+    color: $fb-color;
+}
+span.no-github, span.no-demo {
+    text-decoration: line-through;
+}
+span.twitter {
+    color: $twitter;
+}
+span.github {
+    color: $github;
+}
+
+// highlight color selection
+::selection {
+    color: $highlight-color;
+    background: $highlight-bg; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    color: $highlight-color;
+    background: $highlight-bg; /* Gecko Browsers */
+}
+
+// layout
+
+body { 
+  background-color: $main-bg; 
+  font-family: 'Inconsolata', 'sans-serif';
+  .container {
+    // container code
+    transition: transform 1s;
+    header {
+        display: -webkit-flex;
+        display: flex;
+        justify-content: left;
+        margin: 15% 0 0 15%;
+        p {
+            color: $header-color;
+            font-weight: $bold;
+            padding: 2.5%;
+            cursor: pointer;
+        }
+        p:hover {
+            color: $header-color-active;
+        }
+        p.home-tab {
+            transition: transform 1s;
+            text-decoration: underline;
+        }
+    }
+    .home-list-container {
+        margin: -2% 0 0 18%;
+        a.cli {
+            display: block;
+            width: 25%;
+            text-decoration: none;
+            padding-top: 2.5%;
+            color: $header-color;;
+            .dollar-sign {
+                color: $highlight-color;
+            }
+        }
+        a.cli:hover {
+            color: $header-color-active;
+        }
+    }
+  }
+  .experience, 
+  .code, 
+  .history, 
+  .projects,
+  .social,
+  .contact {
+        display: none;
+        margin: -10% 0 0 5%;
+    }
+  .experience {
+    .experience-list-container {
+       .job-one, 
+       .job-two, 
+       .job-three, 
+       .job-four {
+        margin-bottom: 5%;
+        .company, 
+        .role, 
+        .description {
+            margin-left: 2.5%;
+        }
+        .experience-details {
+            margin-top: 5%;
+            .detail {
+                margin-left: 5%;
+            }
+        } 
+      }
+    }
+  }
+  .code {
+    .code-select-container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        .tidy, .tasty {
+            padding-right: 2.5%;
+            cursor: pointer;
+        }
+    }
+    .tidy-list-container, 
+    .tasty-list-container  {
+        display: none;
+        .code-one, 
+        .code-two, 
+        .code-three, 
+        .code-four,
+        .code-five,
+        .code-six,
+        .code-seven,
+        .code-eight {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: center;
+            flex-direction: center;
+            .six-column {
+                width: 45%;
+                pre {
+                    line-height: 175%;
+                }  
+            }
+        }
+    }
+  }
+  // .projects {
+  //   .projects-list-container {
+  //       .project-one,
+  //       .project-two,
+  //       .project-three,
+  //       .project-four {
+  //           display: -webkit-flex;
+  //           display: flex;
+  //           -webkit-flex-direction: center;
+  //           flex-direction: center;
+  //           .project-details {
+
+  //           }
+  //       }
+  //   }
+  // }
+  .history {
+    .history-list-container {
+        .hist-one {
+            margin-bottom: 2.5%;
+        }
+    }
+    .history-details {
+        margin: 5% 0;
+        .detail {
+            margin: 1.5% 0 0 1.5%;
+        }
+    }
+  }
+  .social {
+    .social-list-container {
+        .social-one,
+        .social-two {
+            margin-bottom: 2.5%;
+        }
+    }
+    .social-details {
+        margin: 2.5% 0;
+        .detail {
+            margin: 1.5% 0 0 1.5%;
+            a {
+                color: $header-color-active;
+            }
+            .sub-detail {
+                margin: 1.5% 0 0 1.5%;
+                span {
+                    color: $github-light;
+                }
+            }
+        }
+    }
+  }
+  .contact {
+    form {
+        input {
+            display: block;
+            margin: 1% 0;
+            padding: 2.5px;
+            width: 20%;
+            font-family: 'Inconsolata'; font-weight: 400;
+            font-size: 1em;
+        }
+        label {
+            margin-bottom: 10%;
+        }
+        #text-area {
+            width: 20%;
+            height: 50px;
+            font-family: 'Inconsolata'; font-weight: 400;
+            font-size: 1em;
+        }
+        #btn-submit {
+            width: 75px;
+            color: $fb-color;
+            background-color: $fb-bg;
+            border-radius: 5%;
+            border: 1px solid $fb-bg;
+            font-family: 'Inconsolata'; font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    }
+  }
+}

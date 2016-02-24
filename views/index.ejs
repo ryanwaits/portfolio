@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ryanwaits</title>
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+  <body>
+    <div class="alert">Thanks for the message</div>
+    <div class="container">
+      <header>
+        <p class="home-tab">ryanwaits</p>
+        <p class="projects-tab">projects</p>
+        <p class="social-tab">social</p>
+        <p class="contact-tab">contact</p>
+      </header>
+      <div class="home-list-container">
+        <a href="#" class="cli"><span class="dollar-sign">$</span> work experience</a>
+        <a href="#" class="cli"><span class="dollar-sign">$</span> some code</a>
+        <a href="#" class="cli"><span class="dollar-sign">$</span> history</a>
+      </div>
+    </div>
+
+    <section class="experience">
+      <h1>Work Experience</h1>
+      <div class="experience-list-container">
+        <div class="job-one">
+          <p>Name</p>
+          <a href="https://twitter.com/organic_ads" target="_blank"><p class="company">@organic_ads</p></a>
+          <p>Role</p>
+          <p class="role">associate web developer</p>
+          <p>Description</p>
+          <p class="description">i worked closely with our designers to create pixel perfect markup for our clients (landing pages) using front end best practices</p>
+
+          <div class="experience-details">
+            <p>-B <span class="detail">build beautiful, scalable, responsive web applications</span></p>
+            <p>-e <span class="detail">execute best practices to ensure a high quality and extendable code base</span></p>
+            <p>-m <span class="detail">maintain consistency across all modern web browsers</span></p>
+            <p>-w <span class="detail">work closely with all team members in a highly collaborative, distributed work environment</span></p>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="job-two">
+          <p>Name</p>
+          <a href="https://twitter.com/FantasyHub" target="_blank"><p class="company">@fantasy_hub</p></a>
+          <p>Role</p>
+          <p class="role">junior front end developer</p>
+          <p>Description</p>
+          <p class="description">played a role in the mobile design process while taking care of small feature implementations and bug fixes</p>
+
+          <div class="experience-details">
+            <p>-L <span class="detail">led the design and implementaton of new features </span></p>
+            <p>-t <span class="detail">track down bugs and find efficient solutions </span></p>
+            <p>-M <span class="detail">mobile platform redesign</span></p>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="job-three">
+          <p>Name</p>
+          <a href="https://twitter.com/ryan_waits" target="_blank"><p class="company">@freelance</p></a>
+          <p>Role</p>
+          <p class="role">freelance developer</p>
+          <p>Description</p>
+          <p class="description">running my own business as a web developer</p>
+
+          <div class="experience-details">
+            <p>-p <span class="detail">plan and direct all functions of the business</span></p>
+            <p>-C <span class="detail">communicate effectively with clients and mutually understand application needs</span></p>
+            <p>-P <span class="detail">provide clear honest feedback and time frames on client projects</span></p>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="job-four">
+          <p>Name</p>
+          <a href="https://twitter.com/moodmedia" target="_blank"><p class="company">@mood_media</p></a>
+          <p>Role</p>
+          <p class="role">technical support</p>
+          <p>Description</p>
+          <p class="description">communicate technical hardware and software issues to clients as well as in house technicians</p>
+
+          <div class="experience-details">
+            <p>-e <span class="detail">engage with my customers music service needs in order to effectively direct them to a positive and personal solution</span></p>
+            <p>-c <span class="detail">client management experience handling well over 25 emails and 30 phone calls a day, while dealing with a number of different departments and instructions</span></p>
+            <p>-a <span class="detail">able to break down complex technical issues in a short and understandable manner, helping customers save valuable time</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="code">
+      <h1>Code</h1>
+      <div class="code-select-container">
+        <h3 class="tidy">tidybank.rb</h3>
+        <h3 class="tasty">tasty.js</h3>
+      </div>
+      <div class="tidy-list-container">
+        <div class="code-one">
+          <div class="six-column">
+            <pre>Set the current session and id for the <code class="annotate">SHOW</code>, <code class="annotate">EDIT</code>, and <code class="annotate">DESTROY</code> actions.<br>Also include the following methods from the <code class="annotate">SessionHelper</code> module.</pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              <span class="keyword">class</span> <span class="function">ParentsController < ApplicationController</span>
+                before_action <span class="vars">:set_parent, only: [:show, :edit, :destroy]</span>
+                <span class="keyword">include</span> SessionsHelper
+            </pre>
+          </div>
+        </div>
+        <div class="code-two">
+          <div class="six-column">
+            <pre>Create a reference to the current <code class="annotate">@parent</code> and their <code class="annotate">@children</code></pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              <span class="keyword">def</span> index
+                  @parent = session[<span class="vars">:parent_id</span>]
+                  @children = <span class="vars">Child</span>.where(<span class="vars">parent_id:</span> @parent)
+              <span class="keyword">end</span>
+            </pre>
+          </div>
+        </div>
+        <div class="code-three">
+          <div class="six-column">
+            <pre>Using our private <code class="annotate">parent_params</code> method, we create a parent resource. If <br>successful, we set the session id with our <code class="annotate">log_in</code> method from our<br><code class="annotate">SessionHelper</code> module. Else, we alert an error.</pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              <span class="keyword">def</span> <span class="function">create</span>
+                @parent = <span class="vars">Parent</span>.create(parent_params)
+
+                <span class="keyword">if</span> @parent.save
+                  log_in(@parent)
+                  redirect_to parents_path
+                <span class="keyword">else</span>
+                  flash[<span class="vars">:notice</span>] = "Please fill out the form!"
+                  redirect_to new_parent_path
+                <span class="keyword">end</span>
+              <span class="keyword">end</span>
+
+              <span class="keyword">private</span>
+                <span class="keyword">def</span> <span class="function">parent_params</span>
+                  params.require(<span class="vars">:parent</span>).permit
+                  (
+                  <span class="vars">:first_name</span>, <span class="vars">:last_name</span>, 
+                  <span class="vars">:email</span>, <span class="vars">:username</span>, 
+                  <span class="vars">:password</span>, <span class="vars">:password_confirmation</span>
+                  )
+                <span class="keyword">end</span>
+              <span class="keyword">end</span>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="tasty-list-container">
+        <div class="code-one">
+          <div class="six-column">
+            <pre>Include dependencies needed to make requests to the <span class="fb">Facebook Graph API</span></pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              <span class="keyword">var</span> express = <span class="vars">require </span>('express'),
+                  router = <express class="span function">Router</express>(),
+                  passport = <span class="vars">require </span>('passport'),
+                  User = <span class="vars">require </span>('../models/user'),
+                  graph = <span class="vars">require  </span>('fbgraph');
+            </pre>
+          </div>
+        </div>
+        <div class="code-two">
+          <div class="six-column">
+            <pre>Using <code class="annotate">passport</code>, we send the user to authenticate with Facebook or<br>sign in to Facebook if they are not logged in.</pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              router.<span class="function">get</span>('/auth/facebook', passport.<span class="function">authenticate</span>('facebook'));
+            </pre>
+          </div>
+        </div>
+        <div class="code-three">
+          <div class="six-column">
+            <pre>Using <code class="annotate">passport</code> again, we can retrieve an access token from Facebook and<br>redirect the user back to our home page.</pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              router.<span class="function">get</span>('/auth/facebook/callback',
+              passport.<span class="function">authenticate</span>('facebook', {failureRedirect: '/login'}), 
+              <span class="keyword">function</span>(req, res, next){
+                res.<span class="function">redirect</span>('/dashboard');
+              });
+            </pre>
+          </div>
+        </div>
+        <div class="code-four">
+          <div class="six-column">
+            <pre>Through our <code class="annotate">User</code> model, we can retrieve the user and send them to our dashboard page.<br>If authenticated, we use our <code class="annotate">graph</code> api wrapper to set the users access token in order<br>to make further requests to the <span class="fb">Facebook Graph API.</span></pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              // Start of request
+              router.<span class="function">get</span>('/dashboard', <span class="keyword">function</span>(req, res, next) {
+                User.<span class="function">findOne</span>({facebookId: req.user.facebookId}, <span class="keyword">function</span>(err, user) {
+                  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;
+
+                  graph.<span class="function">setAccessToken</span>(req.user.accessToken);
+            </pre>
+          </div>
+        </div>
+        <div class="code-five">
+          <div class="six-column">
+            <pre>Create a <code class="annotate">searchOptions</code> variable holding our search parameters. Pass our variable<br>into the <code class="annotate">search</code> endpoint and <code class="annotate">console.log()</code> the result in order to obtain the page<br>id for further requests. Lastly, set an empty array which we can use to store<br>our page videos.</pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              <span class="keyword">var</span> searchOptions = {
+                q:     "buzzfeedtasty",
+                type:  "page"
+              };
+                   
+              graph.<span class="function">search</span>(searchOptions, <span class="keyword">function</span>(err, res) {
+                console.<span class="function">log</span>(res); 
+              });
+
+              var videos = [];
+            </pre>
+          </div>
+        </div> 
+        <div class="code-six">
+          <div class="six-column">
+            <pre>Send a video request to the <span class="fb">Facebook Graph API</span> using the page id we received from<br>the previous request. Reference our videos with the <code class="annotate">body</code> variable.</pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              // Start of video request
+              graph.<span class="function">get</span>("https://graph.facebook.com/v2.2/1614251518827491/videos?", 
+              <span class="keyword">function</span>(err, result) {
+                <span class="keyword">var</span> body = result;
+            </pre>
+          </div>
+        </div>
+        <div class="code-seven">
+          <div class="six-column">
+            <pre>We need to set a <code class="annotate">counter</code> to the length of our results since we will be making<br>multiple asynchronous requests. The for loop sends a request for<br>each video and pushes them into our <code class="annotate">videos</code> array.</pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              <span class="keyword">var</span> counter = result.<span class="vars">data</span>.<span class="vars">length</span>;
+
+              // Start of for loop
+              <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">=</span> <span class="vars">0</span>; i <span class="keyword"><</span> counter; i<span class="keyword">++</span>) {
+                graph.<span class="function">get</span>(
+                'https://graph.facebook.com/v2.2/' + result.<span class="vars">data</span>[i].<span class="vars">id</span> + '?fields=embed_html', 
+                <span class="keyword">function</span>(err, result) {
+                  videos.<span class="vars">push</span>(result);
+            </pre>
+          </div>
+        </div> 
+        <div class="code-eight">
+          <div class="six-column">
+            <pre>Since we are only able to <code class="annotate">render</code> once all the video requests are complete, we create<br>a function that checks when our <code class="annotate">counter</code> is finished, and passes the appropriate<br>data to our view. We decrease our counter at the end of our for loop and keep checking<br>to see when the requests are complete.</pre>
+          </div>
+          <div class="six-column">
+            <pre>
+              // Start of function
+                <span class="keyword">var</span> <span class="function">complete</span> = <span class="keyword">function</span>(err) {
+                 <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;
+                 // Start of conditional
+                 <span class="keyword"></span> (counter <span class="keyword">===</span> 0) {
+
+                  res.<span class="function">render</span>('dashboard', {
+                    user: req.user,
+                    body: body,
+                    data: videos,
+                    util: util
+                  });
+
+                 }; // End of conditional
+                }; // End of function
+
+                counter --;
+                <span class="function">complete</span>();
+
+              }); // End of video request
+            }; // End of request
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <section class="history">
+      <h1>History</h1>
+      <div class="history-list-container">
+        <div class="hist-one">
+          <p>Beginnings</p>
+          <div class="history-details">
+            <p>-b <span class="detail">back in the day, i played tennis at an elite level through college as well as professional.</span></p>
+            <p>-r <span class="detail">i like to look back on my experience as a reminder of where hard work, passion and dedication can take you.</span></p>
+            <p>-a <span class="detail">i knew i had accomplished what i could with tennis, so in 2013 i decided to take on a new passion, coding. </span></p>
+          </div>
+          <div class="divider"></div>
+          <p>Recent</p>
+          <div class="history-details">
+            <p>-M <span class="detail">my career in web development started with a lot of self teaching and a lot of road blocks.</span></p>
+            <p>-i <span class="detail">i took on a few jobs during my path to make ends meet, but i never let go of the ultimate goal of being a valuable web developer.</span></p>
+            <p>-L <span class="detail">as i learned more, i was able to get work as a freelancer and ultimately a junior level developer.</span></p>
+            <p>-w <span class="detail">i have worked with senior developers with technologies such as angular and meteor.</span></p>
+          </div>
+          <div class="divider"></div>
+          <p>Current</p>
+          <div class="history-details">
+            <p>-P <span class="detail">polishing my front end skills with angular and react at general assembly's web dev bootcamp.</span></p>
+            <p>-n <span class="detail">extensive work on the backend with node and express applications</span></p>
+            <p>-d <span class="detail">diving into data science and data analytics with R and d3.js</span></p>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <section class="projects">
+      <h1>Projects</h1>
+      <div class="projects-list-container">
+        <div class="project-one">
+          <a href="http://smile.insure/" target="_blank"><p>smile.insure</p></a>
+          <div class="project-details">
+             <p>[ <span class="no-github">github</span> || <a href="http://smile.insure/" target="_blank"><span class="#">demo</span></a> ]
+             <span class="detail">past work including layout design, form validation, and twilio api</span></p>
+          </div>
+        </div>
+        <div class="project-two">
+          <a href="https://sellergizmo.com/" target="_blank"><p>seller gizmo</p></a>
+          <div class="project-details">
+             <p>[ <span class="no-github">github</span> || <a href="https://sellergizmo.com/" target="_blank"><span class="#">demo</span></a> ]
+             <span class="detail">marketing application for sellers on amazon</span></p>
+          </div>
+        </div>
+        <div class="project-three">
+          <a href="http://smile.insure/" target="_blank"><p>tidy bank</p></a>
+          <div class="project-details">
+             <p>[ <a href="https://github.com/ryanwaits/tidy_bank" target="_blank"><span class="#">github</span></a> || <a href="https://tidybank.herokuapp.com/" target="_blank"><span class="#">demo</span></a> ]
+             <span class="detail">a ruby application for parents using a payment system as incentive to their children for doing chores</span></p>
+          </div>
+        </div>
+        <div class="project-four">
+          <a href="https://github.com/ryanwaits/tasty" target="_blank"><p>tasty</p></a>
+          <div class="project-details">
+             <p>[ <a href="https://github.com/ryanwaits/tasty" target="_blank"><span class="#">github</span></a> || <span class="no-demo">demo</span> ]
+             <span class="detail">node project giving you the ability to search recipe videos by ingredients</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="social">
+      <h1>Social</h1>
+      <div class="social-list-container">
+        <div class="social-one">
+          <p>[ <a href="https://twitter.com/ryan_waits" target="_blank"><span class="twitter">twitter</span></a> ]</p>
+        </div>
+      </div>
+      <% if (tweets) { %>
+      <% for (var i = 0; i < tweets.length; i++) { %>
+      <div class="social-details">
+        <div class="detail">
+          <p><span class="twitter"><%= moment(tweets[i].created_at).fromNow() %></span>: <%= tweets[i].text %></p>
+        </div>
+      </div>
+      <% } %>
+      <% } else { %>
+        <div class="social-details">
+          <div class="detail">
+            <p>i may have hit an api limit, check back later.</p>
+          </div>
+        </div>
+      <% } %>
+      <div class="social-list-container">
+        <div class="social-two">
+          <p>[ <a href="https://github.com/ryanwaits" target="_blank"><span class="github">github</span></a> ]</p>
+        </div>
+      </div>
+      <% if (repos) { %>
+      <% for (var i = 0; i < repos.length; i++) { %>
+      <div class="social-details">
+        <div class="detail">
+          <a href="<%= repos[i].html_url %>" target="_blank"><%= repos[i].name %> %></a>
+          <div class="sub-detail">
+            <p>
+            <span>description</span>: <%= repos[i].description %> | <span>language</span>: <%= repos[i].language %> | <span>updated</span>: <%= moment(repos[i].updated_at).format('MMM DD, YYYY') %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <% } else { %>
+        <div class="social-details">
+          <div class="detail">
+            <div class="sub-detail">
+              <p>whoops! i must have hit an api limit, check back later.</p>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </section>
+    <section class="contact">
+      <h1>Contact</h1>
+      <form action="//formspree.io/ryan.waits@gmail.com" method="POST">
+          <label for="name">Name</label>
+          <input type="text" name="name">
+          <label for="email">Email</label>
+          <input type="email" name="_replyto">
+          <label for="message">Message</label>
+          <input id="text-area" type="text-area" name="message">
+          <input type="hidden" name="_next" value="/" />
+          <input id="btn-submit" type="submit" value="Send">
+      </form>
+    </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/main.js"></script>
+  </body>
+</html>
