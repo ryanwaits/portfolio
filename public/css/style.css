@@ -189,6 +189,11 @@ body {
         body .code .tasty-list-container .code-seven .six-column pre,
         body .code .tasty-list-container .code-eight .six-column pre {
           line-height: 175%; }
+  body .projects .projects-list-container .project-one,
+  body .projects .projects-list-container .project-two,
+  body .projects .projects-list-container .project-three,
+  body .projects .projects-list-container .project-four {
+    padding-bottom: 1%; }
   body .history .history-list-container .hist-one {
     margin-bottom: 2.5%; }
   body .history .history-details {

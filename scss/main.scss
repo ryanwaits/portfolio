@@ -188,22 +188,16 @@ body {
         }
     }
   }
-  // .projects {
-  //   .projects-list-container {
-  //       .project-one,
-  //       .project-two,
-  //       .project-three,
-  //       .project-four {
-  //           display: -webkit-flex;
-  //           display: flex;
-  //           -webkit-flex-direction: center;
-  //           flex-direction: center;
-  //           .project-details {
-
-  //           }
-  //       }
-  //   }
-  // }
+  .projects {
+    .projects-list-container {
+        .project-one,
+        .project-two,
+        .project-three,
+        .project-four {
+          padding-bottom: 1%;
+        }
+    }
+  }
   .history {
     .history-list-container {
         .hist-one {
