@@ -1,8 +1,24 @@
 $(function(){
 
-	// $('#btn-submit').on('click', function() {
-	// 	$('.alert').show();
-	// });
+	$('#btn-submit').on('submit', function() {
+		var name = $('#name').val();
+		var email = $('#email').val();
+		var message = $('#text-area').val();
+		$.ajax({
+		    url: "//formspree.io/ryan.waits@gmail.com", 
+		    method: "POST",
+		    data: {
+		    	name: name,
+		    	email: email,
+		    	message: message
+		    },
+		    dataType: "json"
+		})
+		.done(function(data) {
+			console.log('done');
+		})
+		console.log(name, email, message);
+	});
 
 	// moves the menu up and displays projects page
 	$('p.contact-tab').on('click', function() {
